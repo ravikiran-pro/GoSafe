@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!--google platform api-->
+  
+  <script src="../captcha-gen.js"></script>  
+
+</head>
+<style>
+.container
+{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin: auto;
+}
+</style>
+<body onload="GenerateCaptcha();">
+    <div class="container">
+
+            <form class="form-example" action="" method="post">
+                <h2>Register</h2><hr>
+                
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="" placeholder="enter name">
+                </div>
+
+                <div class="form-group">
+                    <label for="aadhar">Aadhar id:</label>
+                    <input type="text" class="form-control" id="aadhar" placeholder="enter adhar id">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email" placeholder="enter email..." name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password..." name="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="repassword">Re Enter Password:</label>
+                    <input type="password" class="form-control" id="repassword" placeholder="re enter Password..." name="repassword">
+                </div>
+
+                <div class="form-group">
+                <input type="button" id="captcha" class="btn danger" style="font-weight: bold; font-size: 20px; font-family: Modern" />                  
+                <button onclick="GenerateCaptcha();"><i class="fa fa-refresh" aria-hidden="true" style="color: green;"></i>
+                </button>
+                <input type="text" id="captchacompare" class="form-control" text="enter captcha">
+                </div>
+                <p><input type="submit" class="form-control btn btn-primary" value="Register"></p>            </form>
+</div>
+
+</body>
+</html>
