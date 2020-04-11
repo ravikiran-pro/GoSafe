@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="index.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="index.js"></script>
+</head>
+<body>
+
+<input type="text" id="heroname" name="name" value="Thor"/>
+<button type="button" onclick="loadDoc()">Search</button>
+<p id="status"></p>
+<div class="card" id="card">
+	<div class="image">  
+  <img id="img" src="img_avatar.png" alt="Notfound" height="100%" width="100%">
+	</div> 
+  <div class="basicdetails container-fluid">
+  <table class="table table-hover">
+  <tr class="row"><td class="col-sm-3">Id</td><td class="vals col" id="id"></td></tr>
+  <tr class="row"><td class="col-sm-3">Name</td><td class="vals col" id="name"></td></tr>
+  <tr class="row"><td class="col-sm-3">fullname</td><td class="vals col" id="fullname"></td></tr>
+  <tr class="row"><td class="col-sm-3">Gender</td><td class="vals col" id="gender"></td></tr>
+  <tr class="row"><td class="col-sm-3">FirstApperance</td><td class="vals col" id="firstappearance">Elektra</td></tr>
+  </table>
+  </div>
+  <div class="powerstats">
+    <i>Intelligence</i>
+    <div id="intelligence"></div>
+    <i>Strength</i>
+    <div id="strength"></div>
+    <i>Speed</i>
+    <div id="speed">&nbsp</div>
+    <i>Durability</i>
+    <div id="durability">&nbsp</div>
+    <i>Power</i>
+    <div id="power">&nbsp</div>
+    <i>Combat</i><br>
+    <div id="combat">&nbsp</div>	  
+ </div>
+ </div>
+</body>
+</html>
