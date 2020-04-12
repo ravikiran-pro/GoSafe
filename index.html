@@ -8,10 +8,13 @@
     </style>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
     <script>
-     
+      var map; 
       function initGeolocation() {
         if (navigator && navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        var watchId = navigator.geolocation.watchPosition(successCallback, 
+                                                          errorCallback,
+                                                          {enableHighAccuracy:true,timeout:60000,maximumAge:0});
+
         } else {
           console.log('Geolocation is not supported');
         }
@@ -21,14 +24,18 @@
 
       function successCallback(position) {
         var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        var map_options = {
-          zoom: 15,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+        if(map == undefined) {
+          var myOptions = {
+            zoom: 15,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          map = new google.maps.Map(document.getElementById("map"), myOptions);
         }
-       map_container = document.getElementById('map');
-       var map = new google.maps.Map(map_container, map_options);
-      }      
+        else map.panTo(myLatlng);
+    }
+
+
     </script>
   </head>
   <body onload="javascript:initGeolocation()">
