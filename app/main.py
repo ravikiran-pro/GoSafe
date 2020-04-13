@@ -16,7 +16,7 @@ lovers = [
 ]
 
 
-@app.route('/api/my', methods=['GET','POST'])
+@app.route('/')
 def get_tasks():
     return jsonify({'lovers': lovers})
 
